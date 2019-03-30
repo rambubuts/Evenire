@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Events extends CI_Controller {
+class Events extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -14,6 +14,11 @@ class Events extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('events/index.php');
+        $data['content'] = 'events/index';
+        // $data['stylesheets'] = 'events/index_stylesheets';
+        // $data['scripts'] = 'events/index_scripts';
+        $data['title'] = 'Events';
+        $data['sub_title'] = 'The index page for the events';
+        $this->load->view($this->layout, $data);
 	}
 }
