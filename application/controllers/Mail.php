@@ -3,20 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mail extends MY_Controller {
 
+    
 	/**
-	 * Index Page for this controller.
+	 * Inbox Page for the mail controller
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/mail
 	 *	- or -
-	 * 		http://example.com/mail/index
+	 * 		http://example.com/mail/inbox
      * 
 	 */
-	public function index()
+	public function inbox()
 	{
-        $data['content'] = 'mail/index';
+        $data['content'] = 'mail/inbox';
+        $data['stylesheets'] = 'mail/inbox_stylesheets';
+        $data['scripts'] = 'mail/inbox_scripts';
         $data['title'] = 'Mail';
-        $data['sub_title'] = 'The index page for the mail';
+        $data['sub_title'] = 'The page for the mail';
         $this->load->view($this->layout, $data);
 	}
 }

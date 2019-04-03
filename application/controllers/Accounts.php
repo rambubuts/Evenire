@@ -12,21 +12,23 @@ class Accounts extends MY_Controller {
 	 * 		http://example.com/accounts/index
      * 
 	 */
-	public function index()
+	public function approved()
 	{
-        $data['content'] = 'accounts/index';
-        // $data['stylesheets'] = 'accounts/index_stylesheets';
-        // $data['scripts'] = 'accounts/index_scripts';
+        $data['content'] = 'accounts/approved';
+        $data['stylesheets'] = 'accounts/approved_stylesheets';
+        $data['scripts'] = 'accounts/approved_scripts';
         $data['title'] = 'Approved Accounts';
         $data['sub_title'] = 'The index page for the approved accounts';
         $this->load->view($this->layout, $data);
-	}
-		public function pend_index()
+    }
+    
+    public function pending()
 	{
-        $data['content'] = 'accounts/pend_index';
-        // $data['stylesheets'] = 'accounts/index_stylesheets';
-        // $data['scripts'] = 'accounts/index_scripts';
+        $data['content'] = 'accounts/pending';
+        $data['stylesheets'] = 'accounts/pending_stylesheets';
+        $data['scripts'] = 'accounts/pending_scripts';
         $data['title'] = 'Pending Accounts';
         $data['sub_title'] = 'The index page for the pending accounts';
         $this->load->view($this->layout, $data);
+    }
 }

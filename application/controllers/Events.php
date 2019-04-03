@@ -12,13 +12,22 @@ class Events extends MY_Controller {
 	 * 		http://example.com/events/index
      * 
 	 */
-	public function index()
+	public function approved()
 	{
-        $data['content'] = 'events/index';
-        // $data['stylesheets'] = 'events/index_stylesheets';
-        // $data['scripts'] = 'events/index_scripts';
-        $data['title'] = 'Events';
-        $data['sub_title'] = 'The index page for the events';
+        $data['content'] = 'events/approved';
+        $data['stylesheets'] = 'events/approved_stylesheets';
+        $data['scripts'] = 'events/approved_scripts';
+        $data['title'] = 'Approved Events';
+        $data['sub_title'] = 'The page for the approved events';
+        $this->load->view($this->layout, $data);
+    }
+    public function pending()
+	{
+        $data['content'] = 'events/pending';
+        $data['stylesheets'] = 'events/pending_stylesheets';
+        $data['scripts'] = 'events/pending_scripts';
+        $data['title'] = 'Pending Events';
+        $data['sub_title'] = 'The page for the pending events';
         $this->load->view($this->layout, $data);
 	}
 }
