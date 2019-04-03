@@ -126,7 +126,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                © 2017 Monster Admin by wrappixel.com
+                © 2019 Evenire by Team Tabudot
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

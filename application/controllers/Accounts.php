@@ -17,8 +17,16 @@ class Accounts extends MY_Controller {
         $data['content'] = 'accounts/index';
         // $data['stylesheets'] = 'accounts/index_stylesheets';
         // $data['scripts'] = 'accounts/index_scripts';
-        $data['title'] = 'Accounts';
-        $data['sub_title'] = 'The index page for the accounts';
+        $data['title'] = 'Approved Accounts';
+        $data['sub_title'] = 'The index page for the approved accounts';
         $this->load->view($this->layout, $data);
 	}
+		public function pend_index()
+	{
+        $data['content'] = 'accounts/pend_index';
+        // $data['stylesheets'] = 'accounts/index_stylesheets';
+        // $data['scripts'] = 'accounts/index_scripts';
+        $data['title'] = 'Pending Accounts';
+        $data['sub_title'] = 'The index page for the pending accounts';
+        $this->load->view($this->layout, $data);
 }
