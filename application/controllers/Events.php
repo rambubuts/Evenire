@@ -17,8 +17,8 @@ class Events extends MY_Controller {
         $data['content'] = 'events/approved';
         $data['stylesheets'] = 'events/approved_stylesheets';
         $data['scripts'] = 'events/approved_scripts';
-        $data['title'] = 'Approved Events';
-        $data['sub_title'] = 'The page for the approved events';
+        $data['title'] = 'Events';
+        $data['sub_title'] = 'The page for the events';
         $this->load->view($this->layout, $data);
     }
     public function pending()

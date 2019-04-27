@@ -7,6 +7,7 @@
                     <table id="pending_table" class="table">
                         <thead>
                             <tr>
+                                <th>Event Name</th>
                                 <th>Date</th>
                                 <th></th>
                             </tr>
@@ -14,6 +15,7 @@
                         <tbody>
                             <?php for ($i=0; $i < 15; $i++) { ?>
                             <tr>
+                                <td>PSITE: NUEVE</td>
                                 <td><?= date("Y-m-d H:i:s"); ?></td>
                                 <td>
                                     <button class="btn btn-primary">View</button>

@@ -22,4 +22,13 @@ class Mail extends MY_Controller {
         $data['sub_title'] = 'The page for the mail';
         $this->load->view($this->layout, $data);
 	}
+		public function compose()
+	{
+        $data['content'] = 'mail/compose';
+        $data['stylesheets'] = 'mail/inbox_stylesheets';
+        $data['scripts'] = 'mail/inbox_scripts';
+        $data['title'] = 'Compose';
+        $data['sub_title'] = 'The page for the mail';
+        $this->load->view($this->layout, $data);
+	}
 }

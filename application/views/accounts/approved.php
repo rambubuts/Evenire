@@ -7,6 +7,7 @@
                         <thead>
                             <tr>
                                 <th>Account Name</th>
+                                <th>Status</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -14,9 +15,12 @@
                             <?php for ($i=0; $i < 15; $i++) { ?>
                             <tr>
                                 <td>Abadue Adawse</td>
+                                <td>Active</td>
                                 <td>
-                                    <button class="btn btn-primary">View</button>
-                                    <button class="btn btn-primary">Edit</button>
+                                    <button type="submit" class="btn btn-info btn-fill pull-right"><span><i class="fa fa-info-circle fa-lg"></i></span>&nbsp;&nbsp;View</button>
+                                    <button type="submit" class="btn btn-danger btn-fill pull-right"><span><i class="fa fa-minus-circle fa-lg"></i></span>&nbsp;&nbsp;Deactivate</button>
+                                    <button type="submit" class="btn btn-success btn-fill pull-right">
+                                    <span><i class="fa fa-plus-circle fa-lg"></i></span>&nbsp;&nbsp;Approve</button>
                                 </td>
                             </tr>
                             <?php } ?>

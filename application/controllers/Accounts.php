@@ -17,8 +17,8 @@ class Accounts extends MY_Controller {
         $data['content'] = 'accounts/approved';
         $data['stylesheets'] = 'accounts/approved_stylesheets';
         $data['scripts'] = 'accounts/approved_scripts';
-        $data['title'] = 'Approved Accounts';
-        $data['sub_title'] = 'The index page for the approved accounts';
+        $data['title'] = 'Accounts';
+        $data['sub_title'] = 'The index page for the accounts';
         $this->load->view($this->layout, $data);
     }
     
