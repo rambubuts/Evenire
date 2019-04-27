@@ -16,10 +16,10 @@
                     <a href="<?= base_url() . 'dashboard' ?>"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard </span></a>
                 </li>
                 <li>
-                    <a class="#" href="<?= base_url() . 'accounts/approved' ?>" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Accounts </span></a>
+                    <a class="#" href="<?= base_url() . 'accounts/' ?>" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Accounts </span></a>
                 </li>
                 <li>
-                    <a class="#" href="<?= base_url() . 'events/approved' ?>" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Events </span></a>
+                    <a class="#" href="<?= base_url() . 'events/' ?>" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Events </span></a>
                 </li>
                 <li>
                     <a href="<?= base_url() . 'calendar' ?>"><i class="mdi mdi-calendar-text"></i><span class="hide-menu">Calendar </span></a>

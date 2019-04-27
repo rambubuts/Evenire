@@ -12,8 +12,7 @@ class Dashboard extends MY_Controller {
 	 * 		http://example.com/dashboard/index
      * 
 	 */
-	public function index()
-	{
+	public function index() {
         $data['content'] = 'dashboard/dashboard';
         $data['stylesheets'] = 'dashboard/dashboard_stylesheets';
         $data['scripts'] = 'dashboard/dashboard_scripts';
@@ -21,8 +20,8 @@ class Dashboard extends MY_Controller {
         $data['sub_title'] = 'The index page for the dashboard';
         $this->load->view($this->layout, $data);
 	}
-	public function header()
-	{
+	
+	public function header() {
         $data['content'] = 'dashboard/dashboard';
         $data['stylesheets'] = 'dashboard/dashboard_stylesheets';
         $data['scripts'] = 'dashboard/dashboard_scripts';

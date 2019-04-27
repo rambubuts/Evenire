@@ -1,1 +1,0 @@
-<link href="<?= base_url() ?>assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">

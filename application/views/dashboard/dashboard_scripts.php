@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: [ 'dayGrid' ]
+        plugins: [ 'dayGrid' ],
+        events: 'events/calendar',
+        eventClick: function(info) {
+            window.location.href = "events/view/" + info.event.id;
+        }
     });
 
     calendar.render();
