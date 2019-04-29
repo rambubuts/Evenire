@@ -25,11 +25,11 @@
                                 <td><?= $event['name']; ?></td>
                                 <td><?= mdate('%F %d, %Y - %h:%i %A', mysql_to_unix($event['start_date'])); ?></td>
                                 <td><?php
-                                    if(mysql_to_unix($event['start_date']) > now() 
-                                        && mysql_to_unix($event['end_date']) > now()) {
+                                    if(mysql_to_unix($event['start_date']) > now('GMT+8') 
+                                        && mysql_to_unix($event['end_date']) > now('GMT+8')) {
                                         echo 'Upcoming';
-                                    } else if(mysql_to_unix($event['start_date']) < now() 
-                                        && mysql_to_unix($event['end_date']) < now()) {
+                                    } else if(mysql_to_unix($event['start_date']) < now('GMT+8') 
+                                        && mysql_to_unix($event['end_date']) < now('GMT+8')) {
                                         echo 'Done';
                                     } else {
                                         echo 'On going';
