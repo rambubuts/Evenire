@@ -40,7 +40,7 @@ class Event_model extends CI_Model {
 	}
 
 	public function deactivate($id) {
-		$this->db->set('status', 2);
+		$this->db->set('status', 0);
 		$this->db->where('event_id', $id);
 		$this->db->update('events');
 	}

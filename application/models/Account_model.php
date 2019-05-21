@@ -48,6 +48,10 @@ class Account_model extends CI_Model {
         $this->db->set('account_status', 2);
         $this->db->where('account_id', $id);
         $this->db->update('accounts');
+
+        $this->db->set('status', 0);
+        $this->db->where('accounts_account_id', $id);
+        $this->db->update('events');
     }
 
     public function calendar() {

@@ -31,26 +31,25 @@
 								<?php } if($event['status']==2){?>
 									<td>Approved</td>
 								<?php }?>
-								<td>
+								<td> 
 									<button type="btn" class="btn btn-info btn-fill pull-right" data-toggle="modal" data-target="#modal-<?= $event['event_id']; ?>"><span><i class="fa fa-info-circle fa-lg"></i></span>&nbsp;&nbsp;View</button>
-
-									<?php if($event['status']==0){?>
+									<?php if($event['status']==0){ ?>
 										<a href="<?= base_url() . "events/approve/".$event['event_id'] ?>">
-											<button type="submit" class="btn btn-primary btn-fill pull-right"><span><i class="fa fa-info-circle fa-lg"></i></span>&nbsp;&nbsp;Approved</button>
+											<button type="submit" class="btn btn-primary btn-fill pull-right" <?php if($event['account']->account_status == 2) { echo 'disabled'; }  ?>><span><i class="fa fa-info-circle fa-lg"></i></span>&nbsp;&nbsp;Approved</button>
 										</a>
-									<?php } elseif($event['status']==1){?>
+									<?php } else if($event['status']==1){ ?>
 										<a href="<?= base_url() . "events/deactivate/".$event['event_id'] ?>">
 											<button type="submit" class="btn btn-danger btn-fill pull-right"><span><i class="fa fa-info-circle fa-lg"></i></span>&nbsp;&nbsp;Deavtivate</button>
 										</a>
-									<?php } elseif($event['status']==2){?>
+									<?php } else if($event['status']==2){ ?>
 										<a href="<?= base_url() . "events/activate/".$event['event_id'] ?>">
-											<button type="submit" class="btn btn-success btn-fill pull-right"><span><i class="fa fa-info-circle fa-lg"></i></span>&nbsp;&nbsp;Activate</button>
+											<button type="submit" class="btn btn-success btn-fill pull-right" ><span><i class="fa fa-info-circle fa-lg"></i></span>&nbsp;&nbsp;Activate</button>
 										</a>
 									<?php }?>
 
 
 								</td>
-<!--                                 <td>
+               	<!-- <td>
 									<a class="btn btn-info btn-fill pull-right" 
 										href="<?= base_url() . 'events/view/' . $event['id'] ?>"><span>
 										<i class="fa fa-info-circle fa-lg"></i></span>&nbsp;&nbsp;View</a>
