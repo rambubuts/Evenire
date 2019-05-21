@@ -15,6 +15,21 @@ class Events extends MY_Controller {
 	public function index() {
 		$this->load->helper('date');
 		$data['events'] = $this->event_model->get();
+		for($iii = 0; $iii < sizeof($data['events']); $iii++) {
+			$event_info = $this->event_info_model->get_event($data['events'][$iii]['event_id']);
+			$data['events'][$iii]['info'] = $event_info;
+			if($event_info != NULL) {
+				$data['events'][$iii]['account'] = $this->account_model->get($event_info->event_accounts_account_id);
+			} else {
+				$data['events'][$iii]['account'] = NULL;
+			}
+		}
+
+		// foreach ($data['events'] as $event) {
+		// 	array_push($event, 
+		// 		['info' => $this->event_info_model->get_event($event['event_id'])]
+		// 	);
+		// }
         $data['content'] = 'events/index';
         $data['stylesheets'] = 'events/index_stylesheets';
         $data['scripts'] = 'events/index_scripts';
