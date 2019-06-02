@@ -46,18 +46,37 @@ class Event_model extends CI_Model {
 	}
 
 	public function calendar() {
-		$query = $this->db->get_where('events', array('paid' => 1, 'active' => 1));
-
+		$query = $this->db->get_where('events', array('status' => 1));
 		$formatted = array();
 		foreach($query->result_array() as $entry) {
+			$info = $this->db->get_where('event_info', array('event_event_id' => $entry['event_id']))->row();
 			$formatted[] = array(
-				'id' => $entry['id'],
-				'title' => $entry['name'],
-				'start' => date('Y-m-d\TH:i:s', strtotime($entry['start_date'])),
-				'end' => $entry['end_date'],
+				'id' => $entry['event_id'],
+				'title' => $entry['event_title'],
+				'start' => date('Y-m-d\TH:i:s', strtotime($info->event_started_date)),
+				'end' => date('Y-m-d\TH:i:s', strtotime($info->event_end_date)),
 				'allDay' => FALSE,  
+				'info' => $info,
 			);
 		}
 		return $formatted;
+	}
+
+	public function get_info($id) {
+		$event_query = $this->db->get_where('events', array('event_id' => $id));
+		$event = $event_query->row();
+
+		$info_query = $this->db->get_where('event_info', 
+			array('event_event_id' => $id));
+		$info = $info_query->row();
+
+		$account_query = $this->db->get_where('accounts', 
+			array('account_id' => $event->accounts_account_id));
+		$account = $account_query->row();
+		
+		$event->info = $info;
+		$event->account = $account;
+		
+		return $event;
 	}
 }

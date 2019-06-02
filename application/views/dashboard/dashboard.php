@@ -42,3 +42,23 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="modalEventInfo" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="event_title"></span>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <span id="event_type"></span>
+                <span id="event_category"></span>
+                <span id="event_info"></span>
+                <hr>
+                <span id="event_account"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

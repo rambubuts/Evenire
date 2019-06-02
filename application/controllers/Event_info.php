@@ -27,6 +27,10 @@ class Event_info extends MY_Controller {
 		echo json_encode($this->event_model->calendar());
 	}
 
+	public function api($id) {
+		echo json_encode($this->event_model->get_info($id));
+	}
+
 	public function create() {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
@@ -46,7 +50,7 @@ class Event_info extends MY_Controller {
 		} else {
 			$this->event_model->create();
 			redirect('/events', 'refresh');
-    	}
+		}
 	}
 
 	public function view($id) {

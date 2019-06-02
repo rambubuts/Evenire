@@ -22,11 +22,11 @@ class Dashboard extends MY_Controller {
 	}
 	
 	public function header() {
-        $data['content'] = 'dashboard/dashboard';
-        $data['stylesheets'] = 'dashboard/dashboard_stylesheets';
-        $data['scripts'] = 'dashboard/dashboard_scripts';
-        $data['title'] = 'Dashboard';
-        $data['sub_title'] = 'The index page for the dashboard';
-        $this->load->view($this->layout, $data);
+		$data['content'] = 'dashboard/dashboard';
+		$data['stylesheets'] = 'dashboard/dashboard_stylesheets';
+		$data['scripts'] = 'dashboard/dashboard_scripts';
+		$data['title'] = 'Dashboard';
+		$data['sub_title'] = 'The index page for the dashboard';
+		$this->load->view($this->layout, $data);
 	}
 }
