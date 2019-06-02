@@ -69,4 +69,18 @@ class Account_model extends CI_Model {
         }
         return $formatted;
     }
+
+    public function approved() {
+        $this->db->select('*');
+        $this->db->from('accounts');
+        $this->db->where('account_status =', 1);
+        $this->db->or_where('account_status =', 2);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
+    public function pending() {
+        $query = $this->db->get_where('accounts', array('account_status' => 0));
+        return $query->result_array();
+    }
 }

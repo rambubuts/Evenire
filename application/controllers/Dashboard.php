@@ -13,6 +13,9 @@ class Dashboard extends MY_Controller {
      * 
 	 */
 	public function index() {
+		$data['accounts']['approved'] = $this->account_model->approved();
+		$data['accounts']['pending'] = $this->account_model->pending();
+		$data['events']['reported'] = $this->event_model->reported();
         $data['content'] = 'dashboard/dashboard';
         $data['stylesheets'] = 'dashboard/dashboard_stylesheets';
         $data['scripts'] = 'dashboard/dashboard_scripts';

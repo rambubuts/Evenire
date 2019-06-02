@@ -15,12 +15,12 @@ class Event_info extends MY_Controller {
 	public function index() {
 		$this->load->helper('date');
 		$data['events'] = $this->event_model->get();
-        $data['content'] = 'events/index';
-        $data['stylesheets'] = 'events/index_stylesheets';
-        $data['scripts'] = 'events/index_scripts';
-        $data['title'] = 'Events';
-        $data['sub_title'] = 'The page for the events';
-        $this->load->view($this->layout, $data);
+		$data['content'] = 'events/index';
+		$data['stylesheets'] = 'events/index_stylesheets';
+		$data['scripts'] = 'events/index_scripts';
+		$data['title'] = 'Events';
+		$data['sub_title'] = 'The page for the events';
+		$this->load->view($this->layout, $data);
 	}
 
 	public function calendar() {

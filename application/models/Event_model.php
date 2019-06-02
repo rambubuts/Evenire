@@ -79,4 +79,11 @@ class Event_model extends CI_Model {
 		
 		return $event;
 	}
+
+	public function reported() {
+		$query = $this->db->get_where('events', array('status' => 0));
+		$events = $query->result_array();
+
+		return $events;
+	}
 }
