@@ -35,7 +35,10 @@
                 }
                 // Add user data in session
                 $this->session->set_userdata('user', $result);
-                redirect('/dashboard');
+
+                $this->load->view('templates/header');
+                $this->load->view('pages/index');
+                $this->load->view('templates/footer');
             }
         }
         public function logout() {
@@ -46,7 +49,7 @@
             $this->session->unset_userdata('logged_in', $sess_array);
             $data['message_display'] = 'Successfully Logout';*/
             $this->session->sess_destroy();
-            redirect('/');
+            redirect('/registration/creator');
         }
     }
 

@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Event extends CI_Controller {
+    
+	public function __construct(){
+		parent:: __construct();
+		$this->load->library('session');
+    }
+    
     public function index(){
         $this->load->model("Event_model");
         $data['data']= $this->Event_model->displayrecords();
@@ -14,6 +20,7 @@ class Event extends CI_Controller {
 
     public function form_validation()
     {
+        $user = $this->session->userdata('user'); 
         /*Insert Event Table*/
         $this->load->library('form_validation');
         $this->form_validation->set_rules("title", "Event Title", 'required|alpha');
@@ -50,7 +57,7 @@ class Event extends CI_Controller {
                 "event_title"           =>$this->input->post("title"),
                 "event_type"            =>$this->input->post("type"),
                 "event_category"        =>$this->input->post("category"),
-                "accounts_account_id"   =>"1",
+                "accounts_account_id"   =>$user->account_id,
                 "status"                =>"0"
             );
 
@@ -66,14 +73,14 @@ class Event extends CI_Controller {
                 "event_description"         =>$this->input->post("description"),
                 "event_attendees"           =>$this->input->post("attendees"),
                 "event_event_id"            =>$result,
-                "event_accounts_account_id" =>"1"
+                "event_accounts_account_id" =>$user->account_id
 
             );
 
             $event_img_data = array(
                 "event_img"                 =>$this->input->post("file_image"),
                 "event_event_id"            =>$result,
-                "event_accounts_account_id" =>"1"
+                "event_accounts_account_id" =>$user->account_id
             );
 
             $event_program_data = array(
@@ -81,7 +88,7 @@ class Event extends CI_Controller {
                 "event_handle"              =>$this->input->post("handle"),
                 "event_handle_sched"        =>$this->input->post("time_sched"),
                 "event_event_id"            =>$result,
-                "event_accounts_account_id" =>"1"
+                "event_accounts_account_id" =>$user->account_id
 
             );
 
@@ -89,7 +96,7 @@ class Event extends CI_Controller {
                 "event_bundle_type"        =>$this->input->post("bundle_type"),
                 "event_bundle_description" =>$this->input->post("bundle_desc"),
                 "event_event_id"            =>$result,
-                "event_accounts_account_id" =>"1"
+                "event_accounts_account_id" =>$user->account_id
             );
             $this->event_model->insert_event_info_data($event_info_data);
             $this->event_model->insert_event_img_data($event_img_data);

@@ -6,7 +6,7 @@ class Login_model extends CI_Model {
     }
 
     public function login($data) {
-        $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
+        $condition = "username = '" . $data['username'] . "' AND  password = '" . $data['password'] . "'";
         $this->db->select('*');
         $this->db->from('login');
         $this->db->where($condition);

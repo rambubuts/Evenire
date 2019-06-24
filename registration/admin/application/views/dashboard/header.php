@@ -28,8 +28,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-    <script src="<?php echo base_url(); ?>assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+    <![endif]-->
     <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -46,9 +45,6 @@
     </script>
     <link href='<?= base_url() ?>assets/vendor/fullcalendar/core/main.css' rel='stylesheet' />
     <link href='<?= base_url() ?>assets/vendor/fullcalendar/daygrid/main.css' rel='stylesheet' />
-
-
-
 </head>
 <body class="fix-header fix-sidebar card-no-border">
     <!-- ============================================================== -->
@@ -76,7 +72,9 @@
                         <b>
                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                     <!-- Dark Logo icon -->
-
+                    <img src="<?php echo base_url();  ?>/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                    <!-- Light Logo icon -->
+                    <img src="<?php echo base_url();  ?>/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                   </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
@@ -305,20 +303,26 @@
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo base_url();  ?>/assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <ul class="dropdown-user">
-                                  <li>
-                                    <div class="dw-user-box">
-                                      <div class="u-img"><img src="<?= base_url() ?>assets/images/users/1.jpg" alt="user"></div>
-                                      <div class="u-text">
-                                        <h4></h4>
-                                    </div>
-                                  </li>
-                                  <li role="separator" class="divider"></li>
-                                  <li><a href="#"><i class="ti-email"></i> Mail</a></li>
-                                  <li role="separator" class="divider"></li>
-                                  <li><a href="<?= base_url() ?>/login/logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img"><img src="<?php echo base_url();  ?>/assets/images/users/1.jpg" alt="user"></div>
+                                            <div class="u-text">
+                                                <h4>Steave Jobs</h4>
+                                                <p class="text-muted">varun@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                                    <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
+                                    <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </li>
+
                     </ul>
                 </div>
             </nav>
@@ -342,38 +346,34 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <center>
-                            <li class="nav-small-cap">PERSONAL</li>
-                        </center>
+                        <li class="nav-small-cap">PERSONAL</li>
                         <li>
-                            <a href="<?= base_url() ?>dashboard/index" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                            <a class="has-arrow" href="<?= base_url() ?>index" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
                         </li>
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-file-document"></i><span class="hide-menu">Events</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                 <li><a href="<?= base_url() ?>event/index">List of Events</a></li>
-
+                                 <li><a href="<?= base_url() ?>event">Approved Events</a></li>
+                                <li><a href="<?= base_url() ?>pending_event">Pending Events</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow " href="<?= base_url() ?>" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Participants</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                 <li><a href="<?= base_url() ?>participants/index">List of Participants</a></li>
-                            </ul>
+                            <a class="has-arrow " href="<?= base_url() ?>participant" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Participants</span></a>
                         </li>
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-file-document"></i><span class="hide-menu">Survey</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="<?= base_url() ?>survey">Survey Poll</a></li>
+                                <li><a href="app-email.html">Create Survey</a></li>
+                                <li><a href="app-email-detail.html">Survey Result</a></li>
                             </ul>
                         </li>
                         <li>
                             <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Mailbox</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="<?= base_url() ?>compose">Compose</a></li>
-                                <li><a href="<?= base_url() ?>inbox">Inbox</a></li>
-                                <li><a href="<?= base_url() ?>draft"">Draft</a></li>
-                                <li><a href="<?= base_url() ?>sent"">Sent</a></li>
+                                <li><a href="app-email.html">Compose</a></li>
+                                <li><a href="app-email-detail.html">Inbox</a></li>
+                                <li><a href="app-compose.html">Draft</a></li>
+                                <li><a href="app-compose.html">Sent</a></li>
                             </ul>
                         </li>
                     </ul>
