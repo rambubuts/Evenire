@@ -353,6 +353,8 @@
                                                     </td>
                                                     <td align="center">
                                                         <button type="submit" class="btn btn-info btn-fill pull-right" data-toggle="modal" data-target="#itinerary-<?= $val->event_id; ?>" id="viewEventData" value="<?php echo $val->event_id; ?>"><span><i class="mdi mdi-information"></i></span>&nbsp;&nbsp;View</button>
+                                                        <a href="<?= base_url(); ?>event/<?= $val->event_id; ?>">
+                                                        <button class="btn btn-success btn-fill btn-pull-right"><i class="mdi mdi-information"></i> Edit</button></a>
                                                     </td>
                                                     <td align="center">
                                                         <?php if($val->status==0){?>

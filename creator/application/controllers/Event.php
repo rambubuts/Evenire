@@ -18,6 +18,10 @@ class Event extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    public function edit($id) {
+        $this->load->model("Event_model");
+    }
+
     public function form_validation()
     {
         $user = $this->session->userdata('user'); 
